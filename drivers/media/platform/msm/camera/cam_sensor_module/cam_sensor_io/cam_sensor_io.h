@@ -15,7 +15,7 @@
 
 #include <media/cam_sensor.h>
 
-#include "cam_sensor_cmn_header.h"
+#include "../cam_sensor_utils/cam_sensor_cmn_header.h"
 
 #define CCI_MASTER 1
 #define I2C_MASTER 2
@@ -77,6 +77,13 @@ int32_t camera_io_init(struct camera_io_master *io_master_info);
  * This API releases the I2C/SPI master based on master type
  */
 int32_t camera_io_release(struct camera_io_master *io_master_info);
+
+/**
+ * @io_master_info: I2C/SPI master information
+ *
+ * This API return whether to wait normal write
+ */
+bool camera_io_wait_normal_write(void);
 
 /**
  * @io_master_info: I2C/SPI master information
